@@ -1,0 +1,257 @@
+:root {
+  --brand: #1f6f5c;
+  --brand-dark: #144a3d;
+  --bg: #f7f6f2;
+  --card: #ffffff;
+  --text: #22262b;
+  --muted: #6b7280;
+  --border: #e5e2da;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.site-header {
+  background: var(--brand);
+  color: white;
+  padding: 24px 20px;
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.tagline {
+  margin: 6px 0 0;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px 16px 80px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 800px) {
+  .page {
+    grid-template-columns: 2fr 1fr;
+    align-items: flex-start;
+  }
+}
+
+h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.product-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-photo {
+  width: 100%;
+  height: 110px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e9e5da, #d9d3c4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.product-desc {
+  font-size: 13px;
+  color: var(--muted);
+  flex-grow: 1;
+}
+
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.product-price {
+  font-weight: 700;
+}
+
+.add-btn {
+  background: var(--brand);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.add-btn:hover { background: var(--brand-dark); }
+
+.basket-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  position: sticky;
+  top: 16px;
+  height: fit-content;
+}
+
+.basket-items {
+  min-height: 40px;
+  margin-bottom: 12px;
+}
+
+.empty-basket {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.basket-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.basket-row button {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.basket-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 10px 0;
+  border-top: 2px solid var(--border);
+  margin-top: 6px;
+}
+
+.slot-picker {
+  margin: 14px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.slot-picker label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.slot-picker select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: var(--brand);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkout-btn:disabled {
+  background: #c7c2b6;
+  cursor: not-allowed;
+}
+
+.checkout-btn:not(:disabled):hover {
+  background: var(--brand-dark);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.overlay.hidden { display: none; }
+
+.confirmation-box {
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 380px;
+  text-align: center;
+}
+
+.confirmation-box h3 { margin-top: 0; }
+
+.confirmation-box p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
