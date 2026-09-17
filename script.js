@@ -335,10 +335,8 @@ async function confirmBooking() {
       to_email: emailInput.value.trim(),
       to_name: nameInput.value.trim(),
       business_name: BUSINESS_NAME,
-      service_names: serviceNames,
-      booking_date: date,
-      booking_time: formatTimeLabel(time),
-      total_price: formatPrice(total),
+      email_subject: `Booking confirmed — ${BUSINESS_NAME}`,
+      email_body: `You're booked in with ${BUSINESS_NAME}.\n\n${serviceNames}\n${date} at ${formatTimeLabel(time)}\nTotal: ${formatPrice(total)}`,
     }).catch(err => console.error("Confirmation email failed to send:", err));
   }
 
